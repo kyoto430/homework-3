@@ -7,7 +7,11 @@ const Users = () => {
     setUsers(users.filter((user) => user._id !== userId))
   }
   const renderPhrase = (number) => {
-    return number === 1 ? 'человек тусанет' : 'человека тусанут'
+    return number === 1
+      ? 'человек тусанет'
+      : number > 1 && number < 5
+      ? 'человека тусанут'
+      : 'человек тусанет'
   }
   return (
     <>
