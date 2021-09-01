@@ -1,14 +1,20 @@
-import React from 'react'
-import User from './user'
+import React from "react"
+import User from "./user"
+import PropTypes from "prop-types"
 
-const Users = ({ users, ...rest }) => {
+const Users = ({ allUsers, users, ...rest }) => {
   return (
     <>
-      {users.map((user) => (
+      {allUsers.map((user) => (
         <User key={user._id} {...user} {...rest} />
       ))}
     </>
   )
+}
+
+Users.propTypes = {
+  allUsers: PropTypes.array.isRequired,
+  users: PropTypes.array.isRequired
 }
 
 export default Users
